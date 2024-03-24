@@ -31,7 +31,7 @@ public class BrowserInterface
     public static int Confirm(string message)
     {
 #if UNITY_WEBGL
-        JavascriptConfirm(message);
+        return JavascriptConfirm(message);
 #else
         return 0;
 #endif
@@ -39,7 +39,7 @@ public class BrowserInterface
     public static string Prompt(string message, string defaultText)
     {
 #if UNITY_WEBGL
-        JavascriptPrompt(message);
+        return JavascriptPrompt(message, defaultText);
 #else
         return "";
 #endif
